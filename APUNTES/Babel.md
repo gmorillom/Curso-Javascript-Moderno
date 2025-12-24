@@ -1,0 +1,1 @@
+# Babel para compatibilidad con navegadores viejos
