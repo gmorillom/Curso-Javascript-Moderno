@@ -1,0 +1,27 @@
+{
+  "name": "fullstack-mern-app-veterinaria",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Aplicación web para registrar citas de un consultorio veterinario",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "Fullstack",
+    "MERN"
+  ],
+  "author": "gmorillom",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
