@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 
 import connectDB from "./config/db.js"
 import veterinarioRoutes from "./routes/veterinario.js"
+import pacienteRoutes from "./routes/paciente.js"
 
 dotenv.config({quiet:true})
 
@@ -13,6 +14,7 @@ app.use(express.json()) // Habilitamos el acceso a la información recibida en f
 connectDB()
 
 app.use("/api/veterinarios", veterinarioRoutes)
+app.use("/api/pacientes", pacienteRoutes)
 
 app.listen(port, host, () => {
     console.log(`Servidor ExpressJs ejecutándose en el puerto ${host}:${port}`)

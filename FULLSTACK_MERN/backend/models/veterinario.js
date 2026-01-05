@@ -34,7 +34,7 @@ const modelSchema = new mongoose.Schema({
     },
     token: {
         type: String,
-        default: generarId(),
+        default: generarId,
         trim: true
     }
 })

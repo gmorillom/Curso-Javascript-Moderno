@@ -20,7 +20,7 @@ export default async (req, res, next) => {
     }
 
     if(!token){
-        const error = new Error('El token es inválido o no existe')
+        const error = new Error('No está autorizado')
         return res.status(403).json({message: error.message})
     }
 
