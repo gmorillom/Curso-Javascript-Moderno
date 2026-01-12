@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 function login() {
   return (
     <>
-        <div className="mb-10">
+        <div className="mb-20 md:mb-5">
             <h1 className="block text-6xl font-black text-indigo-700">
                 Inicia sesión para administrar tus <span className="text-black">pacientes</span>
             </h1>
@@ -31,7 +31,7 @@ function login() {
                     value="Ingresar"
                     name="sendBtn"
                     id="sendBtn"
-                    className="py-4 px-20 md:w-auto w-full  bg-indigo-800 text-white text-lg font-bold mt-3 hover:cursor-pointer hover:bg-indigo-950 uppercase"
+                    className="py-4 px-20 md:w-auto w-full  bg-indigo-800 text-white text-lg font-bold mt-3 hover:cursor-pointer hover:bg-indigo-950 uppercase rounded-xl"
                 />
             </form>
             

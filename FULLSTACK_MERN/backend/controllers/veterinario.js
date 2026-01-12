@@ -1,6 +1,7 @@
 import generarId from '../helpers/generarId.js'
 import generarJWT from '../helpers/generarJWT.js'
 import Veterinario from '../models/veterinario.js'
+import ConfirmAccountMailer from '../helpers/ConfirmAccountMailer.js'
 
 const signup = async (req, res) => {
 
@@ -15,6 +16,8 @@ const signup = async (req, res) => {
         }
         
         const veterinarioSaved = await veterinarioModel.save()
+
+        ConfirmAccountMailer({email, name: req.body.name, token: veterinarioSaved.token})
 
         res.status(200).json({
             message: "Endpoint de registro",
