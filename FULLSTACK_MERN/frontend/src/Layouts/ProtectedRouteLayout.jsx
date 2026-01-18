@@ -12,7 +12,7 @@ function ProtectedRouteLayout() {
         <>
             <Header />
             <div>
-                {auth?._id ? (<main className="container mt-10 mb-10">
+                {auth?._id ? (<main className="container my-10">
                     <Outlet />
                 </main>) : <Navigate to="/" />}
             </div>

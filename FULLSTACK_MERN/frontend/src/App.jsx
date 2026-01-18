@@ -8,25 +8,28 @@ import ConfirmAccount from './pages/confirm-account'
 import { AuthProvider } from './context/AuthProvider'
 import ProtectedRouteLayout from './Layouts/ProtectedRouteLayout'
 import AdminPatient from './pages/admin-patient'
+import { PatientProvider } from './context/PatientProvider'
 
 function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Routes>
-          <Route path="/" element={<AuthLayout />}>
-            <Route index element={<Login />}></Route>
-            <Route path="/register" element={<RegisterVeterinario />}></Route>
-            <Route path="/confirm-account/:id" element={<ConfirmAccount />}></Route>
-            <Route path="/confirm-password/:token" element={<ConfirmPassword />}></Route>
-            <Route path="/forgot-password" element={<ForgotPassword />}></Route>
-          </Route>
+        <PatientProvider >
+          <Routes>
+            <Route path="/" element={<AuthLayout />}>
+              <Route index element={<Login />}></Route>
+              <Route path="/register" element={<RegisterVeterinario />}></Route>
+              <Route path="/confirm-account/:id" element={<ConfirmAccount />}></Route>
+              <Route path="/confirm-password/:token" element={<ConfirmPassword />}></Route>
+              <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+            </Route>
 
-          <Route path="/admin" element={<ProtectedRouteLayout />}>
-            <Route index element={<AdminPatient />}></Route>
+            <Route path="/admin" element={<ProtectedRouteLayout />}>
+              <Route index element={<AdminPatient />}></Route>
 
-          </Route>
-        </Routes>
+            </Route>
+          </Routes>
+        </PatientProvider>
       </AuthProvider>
     </BrowserRouter>
   )
