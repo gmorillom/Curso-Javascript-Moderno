@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import Alert from "../components/alert"
-import axios from "axios"
 import axiosCLI from "../config/axiosClient"
 
 function RegisterVeterinario() {
@@ -124,7 +123,6 @@ function RegisterVeterinario() {
             value="Crear cuenta"
             name="sendBtn"
             id="sendBtn"
-            
             className="py-4 px-20 md:w-auto w-full  bg-indigo-800 text-white text-lg font-bold mt-3 hover:cursor-pointer hover:bg-indigo-950 uppercase rounded-xl"
             />
         </form>

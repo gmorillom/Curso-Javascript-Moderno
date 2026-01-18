@@ -2,6 +2,7 @@ import generarId from '../helpers/generarId.js'
 import generarJWT from '../helpers/generarJWT.js'
 import Veterinario from '../models/veterinario.js'
 import ConfirmAccountMailer from '../helpers/ConfirmAccountMailer.js'
+import ForgotPasswordMailer from '../helpers/ForgotPasswordMailer.js'
 
 const signup = async (req, res) => {
 
@@ -62,7 +63,12 @@ const login = async (req, res) => {
 
         return res.status(200).json({
             message: 'Usuario autenticado exitosamente!',
-            token: jwtToken
+            user: {
+                name: veterinario.name,
+                email: veterinario.email,
+                token: jwtToken,
+                _id: veterinario._id
+            }
         })
         
     } catch(error){
@@ -106,10 +112,7 @@ const confirm = async (req, res) => {
 }
 
 const profile = (req, res) => {
-    res.json({
-        message: "Accediendo al perfil de un veterinario",
-        data: req.user
-    })
+    res.json(req.user)
 }
 
 const forgotPassword = async (req, res) => {
@@ -126,6 +129,7 @@ const forgotPassword = async (req, res) => {
         // asignamos al usuario un token temporal y lo compartimos
         veterinario.token = generarId()
         await veterinario.save()
+        ForgotPasswordMailer({email, token: veterinario.token, name: veterinario.name})
 
         return res.status(200).json({
             message: 'Veterinario encontrado',
