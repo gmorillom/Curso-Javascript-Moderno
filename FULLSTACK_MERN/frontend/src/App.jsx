@@ -9,6 +9,8 @@ import { AuthProvider } from './context/AuthProvider'
 import ProtectedRouteLayout from './Layouts/ProtectedRouteLayout'
 import AdminPatient from './pages/admin-patient'
 import { PatientProvider } from './context/PatientProvider'
+import EditProfile from './pages/edit-profile'
+import ChangePassword from './pages/change-password'
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
 
             <Route path="/admin" element={<ProtectedRouteLayout />}>
               <Route index element={<AdminPatient />}></Route>
-
+              <Route path="profile" element={<EditProfile />}></Route>
+              <Route path="change-password" element={<ChangePassword />}></Route>
             </Route>
           </Routes>
         </PatientProvider>
