@@ -1,0 +1,11 @@
+** Hacer formulario para editar datos del veterinario (nombre, telefono, sitio web y email), utilizamos el hook de auth 
+y utilizamos un state local para guardar los datos. Declaramos una función en el AuthProvider que recibirá el objeto con los datos ingresados en el formulario (necesario validar que nombre y email sean obligatorios),
+el método en el AuthProvider se encargará de enviar la petición http
+
+** Hacer dos endpoint para actualizar perfil, uno con el método get y otro con el método put, el segundo recibe el id del veterinario como param,
+verificar que el email que desea colocar el usuario no exista... La función del provider debe retornar la respuesta de éxito o error
+
+** Hacer formulario de cambio de contraseña para editar la contraseña del veterinario desde su panel, validar el largo de la contraseña nueva y se debe
+ingresar la contraseña actual como verificación en el backend, el endpoint que vamos a hacer recibe el id del veterinario
+
+** Para resolver el bug de que aparecen pacientes de otro veterinario importamos el hook de auth y colocamos el auth como dependencias de useEffect de pacientes
